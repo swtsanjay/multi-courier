@@ -11,7 +11,16 @@ export type CreateShipmentResult = {
 	rawResponse: Record<string, unknown>;
 };
 
+export type CourierCapabilities = {
+	createShipment: boolean;
+	tracking: boolean;
+	cancellation: boolean;
+};
+
 export interface CourierAdapter {
-	code: string;
+	readonly code: string;
+	readonly name: string;
+	readonly configured: boolean;
+	readonly capabilities: CourierCapabilities;
 	createShipment(input: CreateShipmentInput): Promise<CreateShipmentResult>;
 }

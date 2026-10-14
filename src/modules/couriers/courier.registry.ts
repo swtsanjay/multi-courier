@@ -18,3 +18,7 @@ export function getCourierAdapter(code: string): CourierAdapter {
 
 	return adapter;
 }
+
+export function findCourierAdapter(code: string): CourierAdapter | undefined {
+	return adapters.get(code.toLowerCase());
+}

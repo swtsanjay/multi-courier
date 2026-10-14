@@ -3,6 +3,13 @@ import { CourierAdapter, CreateShipmentInput, CreateShipmentResult } from './cou
 
 export class MockCourierAdapter implements CourierAdapter {
 	readonly code = 'mock_courier';
+	readonly name = 'Mock Courier';
+	readonly configured = true;
+	readonly capabilities = {
+		createShipment: true,
+		tracking: true,
+		cancellation: true,
+	};
 
 	async createShipment(input: CreateShipmentInput): Promise<CreateShipmentResult> {
 		const suffix = createHash('sha256')
