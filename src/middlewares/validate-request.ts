@@ -16,10 +16,11 @@ export function validateRequest(req: Request, res: Response, next: NextFunction)
 		);
 	}
 
-	req.body = matchedData(req, {
-		locations: ['body'],
-		includeOptionals: true,
-	});
+	req.validated = {
+		body: matchedData(req, { locations: ['body'], includeOptionals: true }),
+		query: matchedData(req, { locations: ['query'], includeOptionals: true }),
+		params: matchedData(req, { locations: ['params'], includeOptionals: true }),
+	};
 
 	return next();
 }

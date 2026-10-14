@@ -19,7 +19,7 @@ export class MockCourierAdapter implements CourierAdapter {
 			awbNumber,
 			status: 'CREATED',
 			rawRequest: input.payload,
-			rawResponse: { accepted: true, courierShipmentId, awbNumber },
+			rawResponse: { accepted: true, courierShipmentId, awbNumber }
 		};
 	}
 }

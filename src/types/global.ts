@@ -45,6 +45,11 @@ declare module 'express-serve-static-core' {
       email: string;
       name: string;
     };
+    validated?: {
+      body: Record<string, unknown>;
+      query: Record<string, unknown>;
+      params: Record<string, unknown>;
+    };
   }
 }
 

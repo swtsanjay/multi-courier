@@ -3,7 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 import ApiResponse from '../../../lib/api-response';
 import { prisma } from '../../../lib/prisma';
 import { getCourierAdapter } from '../../../modules/couriers/courier.registry';
-import { CreateOrderInput } from './order.validation';
+import { CreateOrderInput, ListOrdersInput } from './order.types';
 
 const orderInclude = {
 	courierPartner: { select: { code: true, name: true } },
@@ -48,7 +48,6 @@ export async function createOrder(userId: number, input: CreateOrderInput) {
 		});
 
 		try {
-			
 			const result = await adapter.createShipment({
 				orderId: input.order_id,
 				payload: input,
@@ -88,6 +87,75 @@ export async function createOrder(userId: number, input: CreateOrderInput) {
 			: StatusCodes.INTERNAL_SERVER_ERROR;
 		throw ApiResponse.createError(
 			serviceError('Unable to create order', code),
+			error instanceof Error ? error : null
+		);
+	}
+}
+
+export async function listOrders(userId: number, input: ListOrdersInput) {
+	try {
+		const page = input.page || 1;
+		const limit = input.limit || 20;
+		const where: Prisma.OrderWhereInput = {
+			createdById: userId,
+			courierPartner: input.courier_partner
+				? { code: input.courier_partner }
+				: undefined,
+			shipment: input.status
+				? { status: input.status }
+				: undefined,
+		};
+
+		const [orders, total] = await prisma.$transaction([
+			prisma.order.findMany({
+				where,
+				include: orderInclude,
+				orderBy: { createdAt: 'desc' },
+				skip: (page - 1) * limit,
+				take: limit,
+			}),
+			prisma.order.count({ where }),
+		]);
+
+		return {
+			orders,
+			pagination: {
+				page,
+				limit,
+				total,
+				totalPages: Math.ceil(total / limit),
+			},
+		};
+	} catch (error) {
+		throw ApiResponse.createError(
+			serviceError('Unable to fetch orders', StatusCodes.INTERNAL_SERVER_ERROR),
+			error instanceof Error ? error : null
+		);
+	}
+}
+
+export async function getOrder(userId: number, orderId: string) {
+	try {
+		const order = await prisma.order.findFirst({
+			where: {
+				orderId,
+				createdById: userId,
+			},
+			include: orderInclude,
+		});
+
+		if (!order) {
+			throw serviceError('Order not found', StatusCodes.NOT_FOUND);
+		}
+
+		return order;
+	} catch (error) {
+		const code = error instanceof Error && 'code' in error
+			? Number((error as GError).code)
+			: StatusCodes.INTERNAL_SERVER_ERROR;
+
+		throw ApiResponse.createError(
+			serviceError('Unable to fetch order', code),
 			error instanceof Error ? error : null
 		);
 	}

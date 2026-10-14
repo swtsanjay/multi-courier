@@ -5,7 +5,7 @@ import { StatusCodes } from 'http-status-codes';
 import config from '../../../config';
 import ApiResponse from '../../../lib/api-response';
 import { prisma } from '../../../lib/prisma';
-import { LoginInput, RegisterInput } from './auth.validation';
+import { LoginInput, RegisterInput, TokenPair } from './auth.types';
 
 const publicUserFields = {
 	id: true,
@@ -49,7 +49,7 @@ async function createRefreshToken(userId: number): Promise<string> {
 	return token;
 }
 
-async function createTokenPair(user: { id: number; email: string }) {
+async function createTokenPair(user: { id: number; email: string }): Promise<TokenPair> {
 	return {
 		access_token: createAccessToken(user),
 		refresh_token: await createRefreshToken(user.id),
