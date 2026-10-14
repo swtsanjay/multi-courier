@@ -68,7 +68,17 @@ export const listOrdersValidation = [
 
 	query('status')
 		.optional().trim()
-		.toUpperCase().isIn(['PROCESSING', 'CREATED', 'FAILED']),
+		.toUpperCase().isIn([
+			'PROCESSING',
+			'CREATED',
+			'PICKED_UP',
+			'IN_TRANSIT',
+			'OUT_FOR_DELIVERY',
+			'DELIVERED',
+			'CANCELLED',
+			'RTO',
+			'FAILED',
+		]),
 
 	query('courier_partner')
 		.optional()

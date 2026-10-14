@@ -10,6 +10,12 @@ datasource db {
 enum ShipmentStatus {
   PROCESSING
   CREATED
+  PICKED_UP
+  IN_TRANSIT
+  OUT_FOR_DELIVERY
+  DELIVERED
+  CANCELLED
+  RTO
   FAILED
 }
 
@@ -72,9 +78,25 @@ model Shipment {
   createdAt         DateTime       @default(now()) @map("created_at")
   updatedAt         DateTime       @updatedAt @map("updated_at")
   order             Order          @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  trackingHistory   ShipmentTrackingHistory[]
 
   @@index([status])
   @@map("shipments")
+}
+
+model ShipmentTrackingHistory {
+  id          String         @id @default(uuid()) @db.Uuid
+  shipmentId  String         @map("shipment_id") @db.Uuid
+  status      ShipmentStatus
+  location    String?        @db.VarChar(255)
+  description String?        @db.VarChar(500)
+  eventTime   DateTime       @map("event_time")
+  rawPayload  Json?          @map("raw_payload")
+  createdAt   DateTime       @default(now()) @map("created_at")
+  shipment    Shipment       @relation(fields: [shipmentId], references: [id], onDelete: Cascade)
+
+  @@index([shipmentId, eventTime])
+  @@map("shipment_tracking_history")
 }
 
 model RefreshToken {

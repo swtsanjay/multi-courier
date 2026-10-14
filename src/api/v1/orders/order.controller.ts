@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import ApiResponse from '../../../lib/api-response';
-import { createOrder, getOrder, listOrders } from './order.service';
+import { cancelOrder, createOrder, getOrder, listOrders, trackOrder } from './order.service';
 import { CreateOrderInput, ListOrdersInput } from './order.types';
 
 export async function create(req: Request, res: Response, next: NextFunction) {
@@ -39,6 +39,38 @@ export async function show(req: Request, res: Response, next: NextFunction) {
 		const order = await getOrder(req.user!.id, orderId);
 
 		return ApiResponse.success(res, 'Order fetched successfully', { order }, StatusCodes.OK);
+	} catch (error) {
+		return next(error);
+	}
+}
+
+export async function track(req: Request, res: Response, next: NextFunction) {
+	try {
+		const orderId = String(req.validated!.params.orderId);
+		const result = await trackOrder(req.user!.id, orderId);
+
+		return ApiResponse.success(
+			res,
+			'Order tracking refreshed successfully',
+			result,
+			StatusCodes.OK
+		);
+	} catch (error) {
+		return next(error);
+	}
+}
+
+export async function cancel(req: Request, res: Response, next: NextFunction) {
+	try {
+		const orderId = String(req.validated!.params.orderId);
+		const result = await cancelOrder(req.user!.id, orderId);
+
+		return ApiResponse.success(
+			res,
+			result.replayed ? 'Shipment already cancelled' : 'Shipment cancelled successfully',
+			result,
+			StatusCodes.OK
+		);
 	} catch (error) {
 		return next(error);
 	}

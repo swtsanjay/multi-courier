@@ -160,3 +160,140 @@ export async function getOrder(userId: number, orderId: string) {
 		);
 	}
 }
+
+export async function trackOrder(userId: number, orderId: string) {
+	try {
+		const order = await prisma.order.findFirst({
+			where: { orderId, createdById: userId },
+			include: orderInclude,
+		});
+
+		if (!order) {
+			throw serviceError('Order not found', StatusCodes.NOT_FOUND);
+		}
+
+		if (!order.shipment?.awbNumber || order.shipment.status === 'PROCESSING') {
+			throw serviceError('Order does not have a trackable shipment', StatusCodes.CONFLICT);
+		}
+
+		const adapter = getCourierAdapter(order.courierPartner.code);
+		const result = await adapter.trackShipment({
+			awbNumber: order.shipment.awbNumber,
+			currentStatus: order.shipment.status,
+		});
+
+		await prisma.$transaction([
+			prisma.shipment.update({
+				where: { id: order.shipment.id },
+				data: {
+					status: result.status,
+					responsePayload: result.rawResponse as Prisma.InputJsonValue,
+				},
+			}),
+			prisma.shipmentTrackingHistory.createMany({
+				data: result.events.map((event) => ({
+					shipmentId: order.shipment!.id,
+					status: event.status,
+					location: event.location,
+					description: event.description,
+					eventTime: event.eventTime,
+					rawPayload: event.rawPayload as Prisma.InputJsonValue,
+				})),
+			}),
+		]);
+
+		const shipment = await prisma.shipment.findUnique({
+			where: { id: order.shipment.id },
+			include: {
+				trackingHistory: {
+					orderBy: { eventTime: 'asc' },
+				},
+			},
+		});
+
+		return { orderId: order.orderId, shipment };
+	} catch (error) {
+		const code = error instanceof Error && 'code' in error
+			? Number((error as GError).code)
+			: StatusCodes.INTERNAL_SERVER_ERROR;
+
+		throw ApiResponse.createError(
+			serviceError('Unable to track order', code),
+			error instanceof Error ? error : null
+		);
+	}
+}
+
+export async function cancelOrder(userId: number, orderId: string) {
+	try {
+		const order = await prisma.order.findFirst({
+			where: { orderId, createdById: userId },
+			include: orderInclude,
+		});
+
+		if (!order) {
+			throw serviceError('Order not found', StatusCodes.NOT_FOUND);
+		}
+
+		if (!order.shipment?.awbNumber) {
+			throw serviceError('Order does not have a cancellable shipment', StatusCodes.CONFLICT);
+		}
+
+		if (order.shipment.status === 'CANCELLED') {
+			const shipment = await prisma.shipment.findUnique({
+				where: { id: order.shipment.id },
+				include: { trackingHistory: { orderBy: { eventTime: 'asc' } } },
+			});
+
+			return { orderId: order.orderId, shipment, replayed: true };
+		}
+
+		if (['DELIVERED', 'RTO'].includes(order.shipment.status)) {
+			throw serviceError(
+				`A ${order.shipment.status.toLowerCase()} shipment cannot be cancelled`,
+				StatusCodes.CONFLICT
+			);
+		}
+
+		const adapter = getCourierAdapter(order.courierPartner.code);
+		const result = await adapter.cancelShipment({
+			awbNumber: order.shipment.awbNumber,
+		});
+
+		await prisma.$transaction([
+			prisma.shipment.update({
+				where: { id: order.shipment.id },
+				data: {
+					status: result.status,
+					responsePayload: result.rawResponse as Prisma.InputJsonValue,
+				},
+			}),
+			prisma.shipmentTrackingHistory.create({
+				data: {
+					shipmentId: order.shipment.id,
+					status: result.event.status,
+					location: result.event.location,
+					description: result.event.description,
+					eventTime: result.event.eventTime,
+					rawPayload: result.event.rawPayload as Prisma.InputJsonValue,
+				},
+			}),
+		]);
+
+		const shipment = await prisma.shipment.findUnique({
+			where: { id: order.shipment.id },
+			include: { trackingHistory: { orderBy: { eventTime: 'asc' } } },
+		});
+
+		return { orderId: order.orderId, shipment, replayed: false };
+	} catch (error) {
+		const code = error instanceof Error && 'code' in error
+			? Number((error as GError).code)
+			: StatusCodes.INTERNAL_SERVER_ERROR;
+
+		throw ApiResponse.createError(
+			serviceError('Unable to cancel order', code),
+			error instanceof Error ? error : null
+		);
+	}
+}

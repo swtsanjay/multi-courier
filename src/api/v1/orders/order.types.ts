@@ -13,6 +13,6 @@ export type CreateOrderInput = {
 export type ListOrdersInput = {
 	page: number;
 	limit: number;
-	status?: 'PROCESSING' | 'CREATED' | 'FAILED';
+	status?: 'PROCESSING' | 'CREATED' | 'PICKED_UP' | 'IN_TRANSIT' | 'OUT_FOR_DELIVERY' | 'DELIVERED' | 'CANCELLED' | 'RTO' | 'FAILED';
 	courier_partner?: string;
 };
