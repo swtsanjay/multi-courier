@@ -1,0 +1,9 @@
+/node_modules
+/dist
+/logs
+.env
+.env.dev
+.env.prod
+.DS_Store
+package-lock.json
+setup.md
