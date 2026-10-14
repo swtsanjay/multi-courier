@@ -11,7 +11,7 @@ export function validateRequest(req: Request, res: Response, next: NextFunction)
 			res,
 			'Request validation failed',
 			null,
-			StatusCodes.UNPROCESSABLE_ENTITY,
+			StatusCodes.BAD_REQUEST,
 			result.array() as unknown as Gextra
 		);
 	}

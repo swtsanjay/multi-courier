@@ -10,12 +10,21 @@ const urbaneBolt = new UrbaneBoltAdapter();
 adapters.set(mockCourier.code, mockCourier);
 adapters.set(urbaneBolt.code, urbaneBolt);
 
+export function getSupportedCourierCodes(): string[] {
+	return Array.from(adapters.keys()).sort();
+}
+
 export function getCourierAdapter(code: string): CourierAdapter {
 	const adapter = adapters.get(code.toLowerCase());
 
 	if (!adapter) {
-		const error = new Error(`Unsupported courier partner: ${code}`) as GError;
+		const supportedCouriers = getSupportedCourierCodes();
+		const error = new Error(
+			`Unsupported courier partner: ${code}`
+		) as GError;
 		error.code = StatusCodes.BAD_REQUEST;
+		error.name = 'UnsupportedCourierError';
+		error.extra = { supported_couriers: supportedCouriers };
 		throw ApiResponse.createError(error);
 	}
 

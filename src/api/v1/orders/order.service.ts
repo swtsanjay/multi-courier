@@ -13,6 +13,7 @@ const orderInclude = {
 function serviceError(message: string, code: StatusCodes): GError {
 	const error = new Error(message) as GError;
 	error.code = code;
+	error.name = 'OrderServiceError';
 	return error;
 }
 
@@ -85,8 +86,15 @@ export async function createOrder(userId: number, input: CreateOrderInput) {
 		const code = error instanceof Error && 'code' in error
 			? Number((error as GError).code)
 			: StatusCodes.INTERNAL_SERVER_ERROR;
+		const responseError = serviceError('Unable to create order', code);
+		responseError.name = error instanceof Error
+			? error.name
+			: 'CreateOrderError';
+		responseError.extra = error instanceof Error && 'extra' in error
+			? (error as GError).extra
+			: undefined;
 		throw ApiResponse.createError(
-			serviceError('Unable to create order', code),
+			responseError,
 			error instanceof Error ? error : null
 		);
 	}

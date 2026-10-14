@@ -4,10 +4,12 @@ import { StatusCodes } from 'http-status-codes';
 import morgan from 'morgan';
 import apiV1Routes from '../api/v1';
 import Response from '../lib/api-response';
+import { requestContext } from '../middlewares/request-context';
 import { configureTrustedProxies } from './trusted-proxies';
 // import rateLimiter from '../shared-services/middleware/rateLimiter';
 export default ({ app }: { app: Application }) => {
 	configureTrustedProxies(app);
+	app.use(requestContext);
 
 	// HTTP request logger
 	app.use(morgan('dev'));
@@ -69,17 +71,17 @@ export default ({ app }: { app: Application }) => {
 			 * Handle 401 thrown by express-jwt library
 			 */
 			if (err.name === 'UnauthorizedError') {
-				return Response.fail(res, err.message, null, StatusCodes.INTERNAL_SERVER_ERROR);
+				return Response.fail(res, err, null, StatusCodes.UNAUTHORIZED);
 			}
 
 			/*
 			 * Handle multer error
 			 */
 			if (err.name === 'MulterError') {
-				return Response.fail(res, err.message, StatusCodes.INTERNAL_SERVER_ERROR);
+				return Response.fail(res, err, null, StatusCodes.BAD_REQUEST);
 			}
 			const statusCode = Number((err as GError & { statusCode?: number }).statusCode || err.code || StatusCodes.INTERNAL_SERVER_ERROR);
-			return Response.fail(res, err.message, null, statusCode, err.extra);
+			return Response.fail(res, err, null, statusCode, err.extra);
 		}
 	) as (
 		err: Error,

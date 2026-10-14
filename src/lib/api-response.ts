@@ -1,6 +1,30 @@
 import { Response as ExpressResponse } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import config from './../config';
+import Logger from './Logger';
+
+function requestValue(value: unknown): string | undefined {
+	if (typeof value === 'string' || typeof value === 'number') return String(value);
+	return undefined;
+}
+
+function requestMetadata(res: ExpressResponse, error?: GError) {
+	const body = res.req.body;
+	const firstOrder = Array.isArray(body) ? body[0] : body;
+	const orderId = requestValue(firstOrder?.order_id)
+		?? requestValue(res.req.params?.orderId);
+	const courierPartner = requestValue(firstOrder?.courier_partner);
+
+	return {
+		requestId: res.req.requestId,
+		orderId,
+		courierPartner,
+		method: res.req.method,
+		path: res.req.originalUrl,
+		errorType: error?.name ?? 'RequestError',
+		stack: error?.stack,
+	};
+}
 export default class Response {
 	static success<T>(
 		res: ExpressResponse,
@@ -16,7 +40,8 @@ export default class Response {
 			code: StatusCodes.OK,
 			data: null as T,
 			extra: null,
-			qdata: {}
+			qdata: {},
+			request_id: res.req.requestId,
 		};
 
 		if (typeof message === 'string') {
@@ -52,13 +77,20 @@ export default class Response {
 		code?: StatusCodes,
 		extra?: Gextra
 	): GResponse<T> {
-		console.log(`API failed URL: [${res.req.path}]`, message);
+		const sourceError = typeof message === 'string' || 'success' in message
+			? undefined
+			: message;
+		Logger.error(
+			typeof message === 'string' ? message : message.message,
+			requestMetadata(res, sourceError)
+		);
 		const resObj: GResponse<T> = {
 			success: false,
 			message: '',
 			code: StatusCodes.INTERNAL_SERVER_ERROR,
 			data: null as T,
-			extra: null
+			extra: null,
+			request_id: res.req.requestId,
 		};
 
 		if (typeof message === 'string') {

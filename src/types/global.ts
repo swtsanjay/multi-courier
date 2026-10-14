@@ -35,11 +35,13 @@ declare global {
     code: StatusCodes;
     qdata?: Partial<GPagination & GQueryParams>;
     extra?: E;
+    request_id?: string;
   }
 }
 
 declare module 'express-serve-static-core' {
   interface Request {
+    requestId: string;
     user?: {
       id: number;
       email: string;
