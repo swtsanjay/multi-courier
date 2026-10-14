@@ -95,6 +95,8 @@ Orders are processed with limited concurrency. The response contains a separate 
 
 Import `postman.json` into Postman and run:
 
+For a maximum-size bulk test, use `bulk-upload.json` as the raw JSON body of `POST /api/v1/orders/bulk`.
+
 1. Register User
 2. Login
 3. List Couriers

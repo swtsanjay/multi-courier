@@ -1,0 +1,1902 @@
+[
+  {
+    "order_id": "BULK-FILE-000001",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 500,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 1"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000002",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 501,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 2"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000003",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 502,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 3"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000004",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 503,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 4"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000005",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 504,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 5"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000006",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 505,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 6"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000007",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 506,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 7"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000008",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 507,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 8"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000009",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 508,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 9"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000010",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 509,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 10"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000011",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 510,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 11"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000012",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 511,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 12"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000013",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 512,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 13"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000014",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 513,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 14"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000015",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 514,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 15"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000016",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 515,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 16"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000017",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 516,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 17"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000018",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 517,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 18"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000019",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 518,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 19"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000020",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 519,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 20"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000021",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 520,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 21"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000022",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 521,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 22"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000023",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 522,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 23"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000024",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 523,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 24"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000025",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 524,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 25"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000026",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 525,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 26"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000027",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 526,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 27"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000028",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 527,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 28"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000029",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 528,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 29"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000030",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 529,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 30"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000031",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 530,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 31"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000032",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 531,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 32"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000033",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 532,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 33"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000034",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 533,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 34"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000035",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 534,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 35"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000036",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 535,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 36"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000037",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 536,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 37"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000038",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 537,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 38"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000039",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 538,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 39"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000040",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 539,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 40"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000041",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 540,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 41"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000042",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 541,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 42"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000043",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 542,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 43"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000044",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 543,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 44"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000045",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 544,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 45"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000046",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 545,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 46"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000047",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 546,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 47"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000048",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 547,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 48"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000049",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 548,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 49"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000050",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 549,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 50"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000051",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 550,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 51"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000052",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 551,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 52"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000053",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 552,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 53"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000054",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 553,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 54"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000055",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 554,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 55"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000056",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 555,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 56"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000057",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 556,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 57"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000058",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 557,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 58"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000059",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 558,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 59"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000060",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 559,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 60"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000061",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 560,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 61"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000062",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 561,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 62"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000063",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 562,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 63"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000064",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 563,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 64"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000065",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 564,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 65"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000066",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 565,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 66"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000067",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 566,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 67"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000068",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 567,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 68"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000069",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 568,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 69"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000070",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 569,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 70"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000071",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 570,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 71"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000072",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 571,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 72"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000073",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 572,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 73"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000074",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 573,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 74"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000075",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 574,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 75"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000076",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 575,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 76"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000077",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 576,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 77"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000078",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 577,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 78"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000079",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 578,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 79"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000080",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 579,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 80"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000081",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 580,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 81"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000082",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 581,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 82"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000083",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 582,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 83"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000084",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 583,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 84"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000085",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 584,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 85"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000086",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 585,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 86"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000087",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 586,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 87"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000088",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 587,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 88"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000089",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 588,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 89"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000090",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 589,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 90"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000091",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 590,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 91"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000092",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 591,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 92"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000093",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 592,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 93"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000094",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 593,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 94"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000095",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 594,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 95"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000096",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 595,
+    "parcel": {
+      "weight_kg": 1,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 96"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000097",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 596,
+    "parcel": {
+      "weight_kg": 1.25,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 97"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000098",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 597,
+    "parcel": {
+      "weight_kg": 1.5,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 98"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000099",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "PREPAID",
+    "declared_value": 598,
+    "parcel": {
+      "weight_kg": 1.75,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 99"
+    }
+  },
+  {
+    "order_id": "BULK-FILE-000100",
+    "courier_partner": "mock_courier",
+    "service_type": "surface",
+    "payment_mode": "COD",
+    "declared_value": 599,
+    "parcel": {
+      "weight_kg": 2,
+      "length_cm": 20,
+      "breadth_cm": 15,
+      "height_cm": 10
+    },
+    "shipper": {
+      "name": "Delhi Warehouse"
+    },
+    "consignee": {
+      "name": "Bulk Test Customer 100"
+    }
+  }
+]
