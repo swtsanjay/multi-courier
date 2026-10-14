@@ -2,8 +2,8 @@ import cors from 'cors';
 import express, { Application, Request as ExpressRequest, Response as ExpressResponse, NextFunction as ExpressNextFunction } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import morgan from 'morgan';
+import apiV1Routes from '../api/v1';
 import Response from '../lib/api-response';
-import authRoutes from '../api/v1/auth/auth.route';
 import { configureTrustedProxies } from './trusted-proxies';
 // import rateLimiter from '../shared-services/middleware/rateLimiter';
 export default ({ app }: { app: Application }) => {
@@ -52,7 +52,7 @@ export default ({ app }: { app: Application }) => {
 	app.use(express.json({ limit: '1mb' }));
 
 	// Load API routes
-	app.use('/api/v1/auth', authRoutes);
+	app.use('/api/v1', apiV1Routes);
 
 	// catch 404 and forward to error handler
 	app.use((req: ExpressRequest, res: ExpressResponse, next: ExpressNextFunction) => {

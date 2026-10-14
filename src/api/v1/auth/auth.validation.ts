@@ -1,3 +1,5 @@
+import { body } from 'express-validator';
+
 export type RegisterInput = {
 	name: string;
 	email: string;
@@ -7,66 +9,38 @@ export type RegisterInput = {
 
 export type LoginInput = { email: string; password: string };
 
-function requiredText(value: unknown, field: string): string {
-	if (typeof value !== 'string' || !value.trim()) {
-		throw new Error(`${field} is required`);
-	}
+const emailRule = body('email')
+	.trim()
+	.isEmail()
+	.withMessage('email must be valid')
+	.normalizeEmail();
 
-	return value.trim();
-}
+const passwordRule = body('password')
+	.isString()
+	.isLength({ min: 8 })
+	.withMessage('password must contain at least 8 characters');
 
-function password(value: unknown): string {
-	if (typeof value !== 'string' || value.length < 8) {
-		throw new Error('password must contain at least 8 characters');
-	}
+export const registerValidation = [
+	body('name')
+		.trim()
+		.notEmpty()
+		.withMessage('name is required')
+		.isLength({ max: 100 })
+		.withMessage('name must not exceed 100 characters'),
+	emailRule,
+	passwordRule,
+	body('phone')
+		.optional({ nullable: true, checkFalsy: true })
+		.trim()
+		.matches(/^\+?[0-9]{7,20}$/)
+		.withMessage('phone must contain 7 to 20 digits'),
+];
 
-	return value;
-}
+export const loginValidation = [emailRule, passwordRule];
 
-function email(value: unknown): string {
-	if (typeof value !== 'string' || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) {
-		throw new Error('email must be valid');
-	}
-
-	return value.trim().toLowerCase();
-}
-
-function optionalPhone(value: unknown): string | null | undefined {
-	if (value === undefined) {
-		return undefined;
-	}
-
-	if (value === null || value === '') {
-		return null;
-	}
-
-	if (typeof value !== 'string' || !/^\+?[0-9]{7,20}$/.test(value.trim())) {
-		throw new Error('phone must contain 7 to 20 digits');
-	}
-
-	return value.trim();
-}
-
-export function validateRegister(body: Record<string, unknown>): RegisterInput {
-	return {
-		name: requiredText(body.name, 'name'),
-		email: email(body.email),
-		password: password(body.password),
-		phone: optionalPhone(body.phone),
-	};
-}
-
-export function validateLogin(body: Record<string, unknown>): LoginInput {
-	return {
-		email: email(body.email),
-		password: password(body.password),
-	};
-}
-
-export function validateRefreshToken(body: Record<string, unknown>): string {
-	if (typeof body.refresh_token !== 'string' || !body.refresh_token.trim()) {
-		throw new Error('refresh_token is required');
-	}
-
-	return body.refresh_token.trim();
-}
+export const refreshTokenValidation = [
+	body('refresh_token')
+		.trim()
+		.notEmpty()
+		.withMessage('refresh_token is required'),
+];

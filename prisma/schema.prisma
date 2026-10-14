@@ -7,6 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum ShipmentStatus {
+  PROCESSING
+  CREATED
+  FAILED
+}
+
 model User {
   id        Int       @id @default(autoincrement())
   name      String    @db.VarChar(100)
@@ -18,9 +24,57 @@ model User {
   updatedAt DateTime  @updatedAt @map("updated_at")
   deletedAt DateTime? @map("deleted_at")
   refreshTokens RefreshToken[]
+  orders Order[]
 
   @@index([deletedAt])
   @@map("users")
+}
+
+model CourierPartner {
+  id           Int        @id @default(autoincrement())
+  code         String     @unique @db.VarChar(50)
+  name         String     @db.VarChar(120)
+  isActive     Boolean    @default(true) @map("is_active")
+  capabilities Json       @default("{}")
+  createdAt    DateTime   @default(now()) @map("created_at")
+  updatedAt    DateTime   @updatedAt @map("updated_at")
+  orders       Order[]
+
+  @@map("courier_partners")
+}
+
+model Order {
+  id               String         @id @default(uuid()) @db.Uuid
+  orderId          String         @unique @map("order_id") @db.VarChar(100)
+  createdById      Int            @map("created_by_id")
+  courierPartnerId Int            @map("courier_partner_id")
+  normalizedPayload Json          @map("normalized_payload")
+  createdAt        DateTime       @default(now()) @map("created_at")
+  updatedAt        DateTime       @updatedAt @map("updated_at")
+  createdBy        User           @relation(fields: [createdById], references: [id])
+  courierPartner   CourierPartner @relation(fields: [courierPartnerId], references: [id])
+  shipment         Shipment?
+
+  @@index([createdById])
+  @@index([courierPartnerId])
+  @@map("orders")
+}
+
+model Shipment {
+  id                String         @id @default(uuid()) @db.Uuid
+  orderId           String         @unique @map("order_id") @db.Uuid
+  status            ShipmentStatus @default(PROCESSING)
+  courierShipmentId String?        @map("courier_shipment_id") @db.VarChar(150)
+  awbNumber         String?        @unique @map("awb_number") @db.VarChar(150)
+  requestPayload    Json?          @map("request_payload")
+  responsePayload   Json?          @map("response_payload")
+  errorMessage      String?        @map("error_message")
+  createdAt         DateTime       @default(now()) @map("created_at")
+  updatedAt         DateTime       @updatedAt @map("updated_at")
+  order             Order          @relation(fields: [orderId], references: [id], onDelete: Cascade)
+
+  @@index([status])
+  @@map("shipments")
 }
 
 model RefreshToken {

@@ -1,4 +1,5 @@
 import { StatusCodes } from 'http-status-codes';
+import 'express';
 
 declare global {
   var appRoot: string;
@@ -34,6 +35,16 @@ declare global {
     code: StatusCodes;
     qdata?: Partial<GPagination & GQueryParams>;
     extra?: E;
+  }
+}
+
+declare module 'express-serve-static-core' {
+  interface Request {
+    user?: {
+      id: number;
+      email: string;
+      name: string;
+    };
   }
 }
 
