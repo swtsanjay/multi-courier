@@ -8,14 +8,11 @@ datasource db {
 }
 
 enum ShipmentStatus {
-  PROCESSING
   CREATED
   PICKED_UP
   IN_TRANSIT
-  OUT_FOR_DELIVERY
   DELIVERED
   CANCELLED
-  RTO
   FAILED
 }
 
@@ -69,7 +66,7 @@ model Order {
 model Shipment {
   id                String         @id @default(uuid()) @db.Uuid
   orderId           String         @unique @map("order_id") @db.Uuid
-  status            ShipmentStatus @default(PROCESSING)
+  status            ShipmentStatus @default(CREATED)
   courierShipmentId String?        @map("courier_shipment_id") @db.VarChar(150)
   awbNumber         String?        @unique @map("awb_number") @db.VarChar(150)
   requestPayload    Json?          @map("request_payload")

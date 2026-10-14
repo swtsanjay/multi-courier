@@ -3,7 +3,7 @@ import { StatusCodes } from 'http-status-codes';
 import ApiResponse from '../../../lib/api-response';
 import { prisma } from '../../../lib/prisma';
 import { getCourierAdapter } from '../../../modules/couriers/courier.registry';
-import { CreateOrderInput, ListOrdersInput } from './order.types';
+import { BulkOrderResult, CreateOrderInput, ListOrdersInput } from './order.types';
 
 const orderInclude = {
 	courierPartner: { select: { code: true, name: true } },
@@ -42,7 +42,7 @@ export async function createOrder(userId: number, input: CreateOrderInput) {
 				createdById: userId,
 				courierPartnerId: courierPartner.id,
 				normalizedPayload: input as Prisma.InputJsonValue,
-				shipment: { create: { status: 'PROCESSING' } },
+				shipment: { create: { status: 'CREATED' } },
 			},
 			include: orderInclude,
 		});
@@ -90,6 +90,43 @@ export async function createOrder(userId: number, input: CreateOrderInput) {
 			error instanceof Error ? error : null
 		);
 	}
+}
+
+export async function createBulkOrders(userId: number, inputs: CreateOrderInput[]) {
+	const results: BulkOrderResult[] = [];
+	const concurrency = 5;
+
+	for (let index = 0; index < inputs.length; index += concurrency) {
+		const batch = inputs.slice(index, index + concurrency);
+		const batchResults = await Promise.all(batch.map(async (input): Promise<BulkOrderResult> => {
+			try {
+				const result = await createOrder(userId, input);
+				return {
+					order_id: input.order_id,
+					success: true,
+					replayed: result.replayed,
+					order: result.order,
+				};
+			} catch (error) {
+				return {
+					order_id: input.order_id,
+					success: false,
+					error: error instanceof Error ? error.message : 'Unable to create order',
+				};
+			}
+		}));
+
+		results.push(...batchResults);
+	}
+
+	const succeeded = results.filter((result) => result.success).length;
+
+	return {
+		total: results.length,
+		succeeded,
+		failed: results.length - succeeded,
+		results,
+	};
 }
 
 export async function listOrders(userId: number, input: ListOrdersInput) {
@@ -172,7 +209,7 @@ export async function trackOrder(userId: number, orderId: string) {
 			throw serviceError('Order not found', StatusCodes.NOT_FOUND);
 		}
 
-		if (!order.shipment?.awbNumber || order.shipment.status === 'PROCESSING') {
+		if (!order.shipment?.awbNumber) {
 			throw serviceError('Order does not have a trackable shipment', StatusCodes.CONFLICT);
 		}
 
@@ -248,7 +285,7 @@ export async function cancelOrder(userId: number, orderId: string) {
 			return { orderId: order.orderId, shipment, replayed: true };
 		}
 
-		if (['DELIVERED', 'RTO'].includes(order.shipment.status)) {
+		if (order.shipment.status === 'DELIVERED') {
 			throw serviceError(
 				`A ${order.shipment.status.toLowerCase()} shipment cannot be cancelled`,
 				StatusCodes.CONFLICT

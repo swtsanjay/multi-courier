@@ -13,6 +13,14 @@ export type CreateOrderInput = {
 export type ListOrdersInput = {
 	page: number;
 	limit: number;
-	status?: 'PROCESSING' | 'CREATED' | 'PICKED_UP' | 'IN_TRANSIT' | 'OUT_FOR_DELIVERY' | 'DELIVERED' | 'CANCELLED' | 'RTO' | 'FAILED';
+	status?: 'CREATED' | 'PICKED_UP' | 'IN_TRANSIT' | 'DELIVERED' | 'CANCELLED' | 'FAILED';
 	courier_partner?: string;
+};
+
+export type BulkOrderResult = {
+	order_id: string;
+	success: boolean;
+	replayed?: boolean;
+	order?: unknown;
+	error?: string;
 };

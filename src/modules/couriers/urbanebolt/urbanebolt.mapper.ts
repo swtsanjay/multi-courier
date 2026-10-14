@@ -15,13 +15,13 @@ const statusMap: Record<string, TrackingStatus> = {
 	'pickup done': 'PICKED_UP',
 	'in transit': 'IN_TRANSIT',
 	intransit: 'IN_TRANSIT',
-	'out for delivery': 'OUT_FOR_DELIVERY',
-	ofd: 'OUT_FOR_DELIVERY',
+	'out for delivery': 'IN_TRANSIT',
+	ofd: 'IN_TRANSIT',
 	delivered: 'DELIVERED',
 	cancelled: 'CANCELLED',
 	canceled: 'CANCELLED',
-	rto: 'RTO',
-	'return to origin': 'RTO',
+	rto: 'FAILED',
+	'return to origin': 'FAILED',
 	failed: 'FAILED',
 };
 

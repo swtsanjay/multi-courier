@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import { StatusCodes } from 'http-status-codes';
 import ApiResponse from '../../../lib/api-response';
-import { cancelOrder, createOrder, getOrder, listOrders, trackOrder } from './order.service';
+import { cancelOrder, createBulkOrders, createOrder, getOrder, listOrders, trackOrder } from './order.service';
 import { CreateOrderInput, ListOrdersInput } from './order.types';
 
 export async function create(req: Request, res: Response, next: NextFunction) {
@@ -14,6 +14,22 @@ export async function create(req: Request, res: Response, next: NextFunction) {
 		if (error instanceof Error && !('code' in error)) {
 			return ApiResponse.fail(res, error.message, null, StatusCodes.BAD_REQUEST);
 		}
+		return next(error);
+	}
+}
+
+export async function createBulk(req: Request, res: Response, next: NextFunction) {
+	try {
+		const inputs = req.body as CreateOrderInput[];
+		const result = await createBulkOrders(req.user!.id, inputs);
+
+		return ApiResponse.success(
+			res,
+			'Bulk order processing completed',
+			result,
+			StatusCodes.OK
+		);
+	} catch (error) {
 		return next(error);
 	}
 }
